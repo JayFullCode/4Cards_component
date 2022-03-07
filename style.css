@@ -9,7 +9,6 @@ html,body{
     margin: 0;
     padding: 0;
 
-    height: 100%;
     font-size: 15px;
 }
 
@@ -90,4 +89,43 @@ body{
 
 .card-container__element--blue {
     border-top: 4px solid hsl(212, 86%, 64%);
+}
+
+@media screen and (min-width: 700px) {
+
+    #main-container{
+        max-width: 1000px;
+    }
+
+    .header-container{
+        max-width: 500px;
+    }
+
+    .card-container{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 2em 2em;
+
+        grid-template-areas: 
+            ".            red-element            ."
+            "cyan-element red-element blue-element"
+            "cyan-element orange-element blue-element"
+            ".            orange-element         .";
+    }
+
+    .card-container__element--cyan{
+        grid-area: cyan-element;
+    }
+
+    .card-container__element--red{
+        grid-area: red-element;
+    }
+
+    .card-container__element--orange{
+        grid-area: orange-element;
+    }
+
+    .card-container__element--blue{
+        grid-area: blue-element;
+    }
 }
